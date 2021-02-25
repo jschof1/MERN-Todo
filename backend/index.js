@@ -1,14 +1,10 @@
-const express = require("express")
-const app = express()
-const bodyParser = require("body-parser")
-const PORT = process.env.PORT || 3000
-const db = require("./models/")
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 4000
+const db = require("./models/");
 
-app.use(bodyParser.json())
-
-function success(res, payload) {
-  return res.status(200).json(payload)
-}
+app.use(bodyParser.json());
 
 app.get("/todos", async (req, res, next) => {
   try {
